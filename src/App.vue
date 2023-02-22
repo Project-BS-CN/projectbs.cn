@@ -5,11 +5,11 @@
       <template #logo>
         <img height="36" src="./assets/img/logo.png" alt="logo" />
       </template>
-      <t-menu-item value="item1" style="font-weight: bold; font-size: 16px;" @click="scrollTo(1,0)"> 首页 </t-menu-item>
-      <t-menu-item value="item2" style="font-weight: bold; font-size: 16px;" @click="scrollTo(2,500)"> CEIV2 </t-menu-item>
-      <t-menu-item value="item3" style="font-weight: bold; font-size: 16px;" @click="scrollTo(3,1000)"> 即时烈度 </t-menu-item>
+      <t-menu-item value="item1" style="height: 38px; font-weight: bold; font-size: 16px;" @click="scrollTo(1,0)"> 首页 </t-menu-item>
+      <t-menu-item value="item2" style="height: 38px; font-weight: bold; font-size: 16px;" @click="scrollTo(2,500)"> CEIV2 </t-menu-item>
+      <t-menu-item value="item3" style="height: 38px; font-weight: bold; font-size: 16px;" @click="scrollTo(3,1000)"> 即时烈度 </t-menu-item>
       <template #operations>
-        <t-button variant="text" shape="square" @click="jump('https://account.projectbs.cn/')">
+        <t-button style="height: 38px; width: 38px;" variant="text" shape="square" @click="jump('https://account.projectbs.cn/')">
           <template #icon><t-icon name="user" /></template>
         </t-button>
       </template>
