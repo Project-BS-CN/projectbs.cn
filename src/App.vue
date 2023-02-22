@@ -42,7 +42,7 @@
       <span style="font-weight: bold; font-size: 30px;">Chinese Earthquake Information Viewer Version2</span>
     </div>
 
-    <t-row>
+    <t-row style="display: flex; align-items: center; justify-content: center;">
       <div style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center;">
         <t-col :lg="6" :md="6" :sm="6" style="align-self: flex-start;">
           <img src="./assets/img/CEIV2.png" style="width: 100%;">
@@ -66,13 +66,13 @@
       <span style="font-weight: bold; font-size: 30px;">Realtime Intensity</span>
     </div>
 
-    <t-row>
+    <t-row style="display: flex; align-items: center; justify-content: center;">
       <div style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center;">
         <t-col :lg="6" :md="6" :sm="6" style="align-self: flex-start;">
-          <img src="./assets/img/RILogo.png" style="width: 50%; display: block; margin: auto;">
+          <img src="./assets/img/RILogo.png" style="width: 70%; display: block; margin: auto;">
         </t-col>
         <t-col :lg="6" :md="6" :sm="6" style="align-self: stretch; display: flex; align-items: center;">
-          <div style="margin-left: 30px;">
+          <div style="margin-left: 20px;">
             <div class="comingSoon">即将推出</div>
             <div class="productTitle" style="margin-top: 15px;">Realtime Intensity</div>
             <div class="productDes" style="margin-top: 15px;">即时烈度 | 非官方地震监测网</div>
