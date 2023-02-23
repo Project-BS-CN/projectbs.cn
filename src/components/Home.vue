@@ -53,6 +53,7 @@
             <div class="productTitle" style="margin-top: 15px;">CEIV2 | 中国地震信息</div>
             <div class="productDes" style="margin-top: 15px;">开源的中国地震信息可视化项目</div>
             <t-button style="font-weight: bold; margin-top: 7px; height: 40px;" @click="jump('https://account.projectbs.cn/')">内测用户入口</t-button>
+            <t-button style="font-weight: bold; margin-top: 7px; margin-left: 10px; height: 40px;" @click="router.push('/ceiv2closetest')">内测申请</t-button>
           </div>
         </t-col>
       </div>
@@ -179,8 +180,10 @@
 
 <script lang="ts" setup>
 import { ref } from 'vue'
+import router from '../router'
 import { Icon } from 'tdesign-icons-vue-next'
 import '../assets/css/home.css'
+document.title = 'Project BS 防灾企划'
 
 const menuValue = ref('item1')
 
