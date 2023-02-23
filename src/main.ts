@@ -1,6 +1,7 @@
 import { createApp } from 'vue'
 import App from './App.vue'
+import router from './router'
 import TDesign from 'tdesign-vue-next'
 import 'tdesign-vue-next/es/style/index.css'
 
-createApp(App).use(TDesign).mount('#app')
+createApp(App).use(TDesign).use(router).mount('#app')
