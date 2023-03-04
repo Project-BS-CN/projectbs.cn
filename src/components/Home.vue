@@ -94,7 +94,7 @@
     若您有意愿帮助我们继续健康地运营 Project BS，<br>
     您可以点击以下链接进行捐赠。<br>
     <br>
-    <t-link style="color: #fff !important; font-size: 16px;" :href="'https://projectbs.cn/donate/'">去捐赠&nbsp;<icon name="arrow-right" /></t-link>
+    <t-link style="color: #fff !important; font-size: 16px;" @click="router.push('/donatePage')">去捐赠&nbsp;<icon name="arrow-right" /></t-link>
   </div>
   <br><br><br>
   <!-- footer -->

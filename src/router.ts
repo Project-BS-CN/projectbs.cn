@@ -18,6 +18,14 @@ const routes: Array<RouteRecordRaw> = [
         }
     },
     {
+        path: '/donatePage',
+        name: 'Donate',
+        component: () => import('./components/Donate.vue'),
+        meta: {
+            title: '捐赠 - Project BS 防灾企划'
+        }
+    },
+    {
         path: '/:pathMatch(.*)',
         component: () => import('./components/404.vue'),
         meta: {
