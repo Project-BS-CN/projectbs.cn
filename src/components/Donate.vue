@@ -31,14 +31,14 @@
 </div>
 
 <div v-if="nowShow == 2">
-    <div class="tag">请输入您的昵称 (选填)</div>
-    <t-input size="large" class="input" placeholder="昵称" />
+    <div class="tag">请输入您的昵称</div>
+    <t-input size="large" class="input" placeholder="昵称" v-model="userName" />
     <br>
-    <div class="tag">请输入您的QQ号或其他联系方式 (选填)</div>
-    <t-input size="large" class="input" placeholder="QQ号/其他联系方式" />
+    <div class="tag">请输入您的QQ号或其他联系方式</div>
+    <t-input size="large" class="input" placeholder="QQ号/其他联系方式" v-model="qq" />
     <br>
-    <div class="tag">留个言吧 (选填)</div>
-    <t-input size="large" class="input" placeholder="留言" />
+    <div class="tag">留个言吧</div>
+    <t-input size="large" class="input" placeholder="留言" v-model="quote" />
     <br>
     <div class="tag">请输入您想捐赠的金额 (单位: 元)</div>
     <t-input-number size="large" style="display: block; margin: auto;" @change="handleFeeChange(fee)" placeholder="金额" v-model="fee" />
@@ -80,6 +80,7 @@ import router from '../router'
 import axios from 'axios'
 import { MessagePlugin, Icon } from 'tdesign-vue-next'
 import '../assets/css/home.css'
+import { now } from 'lodash'
 document.title = '捐赠 - Project BS 防灾企划'
 
 let menuValue = ref('item2')
@@ -99,6 +100,13 @@ let qrcode = ref('')
 let tradeNo = ref('')
 
 let handleNextStep = () => {
+    if(nowShow.value == 2) {
+        if(userName.value == '' || userName.value == undefined || qq.value == '' || qq.value == undefined || quote.value == '' || quote.value == undefined){
+            console.log(userName.value, qq.value, quote.value);
+            MessagePlugin.error('某个或多个输入框未填写。')
+            return
+        }
+    }
     if(nowShow.value == 3){
         buttonDisabled.value = true
         buttonLoading.value = true
@@ -123,7 +131,8 @@ let handleNextStep = () => {
                     buttonText.value = '完成'
                     nowShow.value += 1
                     clearInterval(notiInterval)
-                    axios.post('https://projectbs.cn/donate/quote/upload.php', `data=${JSON.stringify(quote.value)}`)
+                    
+                    axios.post('https://projectbs.cn/donate/quote/upload.php', `data=${qq.value}ooo${quote.value}&qq=${userName.value}_${new Date().getTime()}`)
                 }
             })
         }, 3000)
@@ -168,5 +177,13 @@ function jump(url: string){
 .t-radio__label {
     position: relative;
     top: -2px;
+}
+
+.t-message {
+    z-index: 999999999 !important;
+}
+
+.t-message__list {
+    z-index: 999999999 !important;
 }
 </style>
