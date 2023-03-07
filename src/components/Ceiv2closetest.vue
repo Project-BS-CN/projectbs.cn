@@ -18,6 +18,8 @@
       <img src="../assets/img/CEIV2Logo.png" style="width: 80px;"/>
       <span style="font-weight: bold; font-size: 30px;">CEIV2内测申请</span>
     </div>
+    <t-alert theme="info" title="温馨提示" message="若您已提交过内测申请，请勿再重复提交，谢谢合作！" close class="input" style="display: flex; margin-top: 10px; margin-bottom: 15px;">
+    </t-alert>
     <div class="tag">请输入您的昵称。</div>
     <t-input clearable size="large" class="input" placeholder="昵称" v-model="userName" />
     <br>
@@ -165,5 +167,9 @@ function jump(url: string){
 
 .t-message__list {
     z-index: 999999999 !important;
+}
+
+.t-is-hidden {
+  display: none !important;
 }
 </style>
